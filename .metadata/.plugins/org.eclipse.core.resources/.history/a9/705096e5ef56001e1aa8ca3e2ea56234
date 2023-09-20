@@ -1,0 +1,65 @@
+package com.example.Service;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.Entity.User;
+import com.example.Repository.UserRepositroy;
+
+@Service
+public class UserServiceImpl implements UserService {
+	
+	@Autowired
+	private UserRepositroy repository;
+
+	@Override
+	public boolean HasCSVFromar(MultipartFile file) {
+		String type = "text/csv";
+		if(!type.equals(file.getContentType())) {
+			return false; // Return false if the content types do not match
+		}
+		return true;
+	}
+
+	@Override
+	public void ProcessAndSaveData(MultipartFile file) {
+		try {
+			//1. Call the csvToUsers method to convert CSV data to a list of User objects
+			List<User> users = csvToUser(file.getInputStream());
+			
+			// 2. Save the list of User objects to the repository
+			repository.saveAll(users);
+			
+		} catch (IOException e) {
+			// TODO: handle exception
+			 // Handle IO exception, such as if there's an issue reading the file
+			e.printStackTrace();
+		}
+		
+	}
+	
+	// Internal method to convert CSV data to a list of User objects
+	private List<User> csvToUser(InputStream inputStream) {
+		
+			//BufferedReader that reads the CSV data from the inputStream. It wraps the inputStream with an InputStreamReader that uses the "UTF-8" character encoding to read the data.
+			try(BufferedReader fileReader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"))) {
+			
+			}
+			return null;
+			
+	}
+
+	@Override
+	public List<User> getAll() {
+		
+		return repository.findAll();
+	}
+
+}

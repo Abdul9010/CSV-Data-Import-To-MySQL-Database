@@ -1,0 +1,87 @@
+package com.example.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
+public class User {
+	
+	@Id
+	@GeneratedValue
+	
+	public String Name;
+	
+	public Long	Mobile;
+	
+	public Long Account;
+	
+	public String	Branch;
+	
+	public Long	Balance;
+	
+	public Long Year;
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public User(String name, Long mobile, Long account, String branch, Long balance, Long year) {
+		super();
+		Name = name;
+		Mobile = mobile;
+		Account = account;
+		Branch = branch;
+		Balance = balance;
+		Year = year;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public Long getMobile() {
+		return Mobile;
+	}
+
+	public void setMobile(Long mobile) {
+		Mobile = mobile;
+	}
+
+	public Long getAccount() {
+		return Account;
+	}
+
+	public void setAccount(Long account) {
+		Account = account;
+	}
+
+	public String getBranch() {
+		return Branch;
+	}
+
+	public void setBranch(String branch) {
+		Branch = branch;
+	}
+
+	public Long getBalance() {
+		return Balance;
+	}
+
+	public void setBalance(Long balance) {
+		Balance = balance;
+	}
+
+	public Long getYear() {
+		return Year;
+	}
+
+	public void setYear(Long year) {
+		Year = year;
+	}
+	
+	
+}

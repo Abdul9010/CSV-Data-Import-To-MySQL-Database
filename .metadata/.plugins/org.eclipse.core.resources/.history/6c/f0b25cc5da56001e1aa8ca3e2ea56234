@@ -1,0 +1,23 @@
+package com.example.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
+public class User {
+	@Id
+	@GeneratedValue
+	
+	public String Name;
+	
+	public Long	Mobile;
+	
+	public Long Account;
+	
+	public String	Branch;
+	
+	public Long	Balance;
+	
+	public Long Year;
+}
