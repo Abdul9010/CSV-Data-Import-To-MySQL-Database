@@ -1,0 +1,29 @@
+package com.example.Service;
+
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
+
+import com.example.Entity.User;
+
+public class UserServiceImpl implements UserService {
+
+	@Override
+	public boolean HasCSVFromar(MultipartFile file) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void ProcessAndSaveData(MultipartFile file) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<User> getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,33 @@
+package com.example.Entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
+public class User {
+	
+	@Id
+	@GeneratedValue
+	public Long Count;
+	
+	public String Name;
+	
+	public String	Mobile;
+	
+	public String Account;
+	
+	public String	Branch;
+	
+	public String	Balance;
+	
+	public String Year;
+	
+	public User() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+	
+}
